@@ -4,16 +4,34 @@
     opacity: .9;
     
 }
+@mixin  textform {
+    color: white;
+    font-size: 1.6rem;
+    text-align: left;
+}
 @mixin buttonn {
     padding: 5px 20px;
     margin: 0 auto;
     background:$main-color;
-    min-width: 250px;
+    max-width: 250px;
     font-size: 2rem;
     text-align: center;
     text-transform: uppercase;
     color: white;
     cursor: pointer;
+}
+@mixin base-section {
+    padding: 3rem 0;
+    position: relative;
+    top: 0;
+    left: 0;
+    scroll-snap-align: start;
+}
+@mixin grid {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    gap: 2rem;
+    width: 1020px;
 }
 body{
     background-color: $bg;
@@ -165,6 +183,7 @@ body{
     flex-direction: column;
     align-items:flex-start;
     z-index: 1001;
+    border-radius:10px;
 }
 .cart-item
 {
@@ -242,25 +261,25 @@ letter-spacing: .2rem;
  margin-top: 10rem;
  background: url(../images/home-img.jpeg);
  background-size:100% 100%;
- position: relative;
+ @include base-section();
+
 }
 .text-home
 {
-    margin-top: 20rem;
+    margin-top: 9rem;
     margin-left: 10rem;
     height: 50vh;
     position: absolute;
+    max-width: 60rem;
 }
 .text-home h1{
     text-transform: uppercase;
     font-size: 10rem;
-    width: 50vw;
-    padding: 10px 0;
 }
 .text-home p
 {
     font-size: 2rem;
-    padding: 20px 0;
+    margin: 20px 0;
 }
 .btn-get-it
 {
@@ -273,4 +292,400 @@ letter-spacing: .2rem;
 {
     letter-spacing: .2rem;
     
+}
+#about
+{
+    @include base-section();
+    text-align: center;
+    
+}
+.heading h1
+{
+    color: white;
+    padding: 1rem;
+    text-transform: uppercase;
+    font-size: 4rem;
+}
+.heading h1> span
+{
+    color: $main-color;
+    text-transform: uppercase;
+}
+.about-content
+{
+    height: 40rem;
+    margin: 0 auto;
+     @include textform();
+    display:flex;
+    margin-top: 5rem;
+    background-color: $black;
+    width: 1020px;
+    
+}
+.about-content >.box-img
+{
+    width: 50%;
+    overflow: hidden;
+    
+}
+.about-content >.box-img img
+{
+    width: 100%;
+    height: 100%;
+}
+.about-content >.box-img img:hover
+{
+ transform: scale(1.5);
+}
+.about-content  .box-text
+{
+        width: 50%;
+        margin-left: 2rem;
+        align-self: center;;
+}
+.about-content  .box-text h2
+{
+    font-size: 3rem;
+     margin: 2rem 0;
+}
+.about-content  .box-text p{
+    font-size: 1.8rem;
+    margin: 3rem 0;
+
+}
+.learn-more-btn
+{
+    @include buttonn();
+    text-transform: capitalize;
+     
+}
+.learn-more-btn:hover
+{
+    letter-spacing: .2rem;
+}
+#menu
+{
+    @include base-section();
+}
+.menu-content
+{
+
+    margin: 2rem auto;
+    @include grid();
+    @include textform();
+    text-align: center;
+    height: 60rem;
+}
+.menu-item
+{
+    border: $border;
+    border-radius: 12px;
+}
+.menu-item img{
+    padding:2rem 0;
+}
+ .price
+{
+    font-size: 2.5rem;
+    padding:1rem;
+    position: relative;
+    padding:2rem 0;
+}
+ .price span
+{
+    font-size: 1.6rem;
+    opacity: .7;
+    text-decoration: line-through;
+
+}
+.btn-add-to-cart
+{
+    @include buttonn();
+    text-transform: capitalize;
+}
+.btn-add-to-cart:hover
+{
+    letter-spacing: .2rem;
+}
+.menu-item:hover 
+{
+    color: black;
+    background-color: white
+    ;
+}
+.menu-item:hover .btn-add-to-cart
+{
+    color: black;
+}
+#product
+{
+    @include base-section();
+    color: white;
+    text-align: center;
+}
+.product-container
+{
+    @include grid();
+    margin: 2rem auto;
+    height: 53rem;
+}
+.product-item
+{
+    border:$border;
+    border-radius: 10px;
+}
+.product-item .icon
+{
+    margin: 4rem;
+    margin-bottom: 2rem;
+
+}
+.product-item .icon .fa{
+    width: 5rem;
+    padding: 2px;
+    border: $border;
+    font-size: 3.5rem;
+    margin: 0 .3rem;
+    border-radius: 5px;
+}
+.product-item .icon .fa:hover
+{
+    background-color: $main-color;
+}
+.product-item img
+{
+    margin: 2rem;
+}
+.product-item img:hover
+{  
+    transform: scale(1.2) ;
+}
+.stars
+{
+    margin: 2rem;
+    color: $main-color;
+}
+.stars .fa
+{
+    font-size: 2rem;
+    margin: 0 .2rem;
+}
+#review
+{
+    @include base-section();
+    color: #fff;
+}
+.review-container
+{
+    @include grid();
+    margin: 3rem 0;
+    height: 50rem;
+    margin: 0 auto;
+}
+.review-item
+{
+    border:$border;
+    border-radius: 10px;
+}
+.review-item img
+{
+    margin: 30px auto;
+    height: 4rem;
+}
+.review-item p
+{
+    @include textform();
+    text-align: center;
+}
+.review-item .avatar
+{
+    border-radius: 50%;
+    height: 10rem;
+}
+.review-item .name{
+   font-size: 2.5rem;
+}
+
+.contact-container{
+    height: 40rem;
+    margin: 0 auto;
+    @include textform();
+    display:flex;
+    margin-top: 5rem;
+    background-color: $black;
+    width: 1020px;
+}
+#contact
+{
+    @include base-section()
+}
+.map
+{
+    width: 50%;
+    height: 100%;
+}
+.map iframe
+{
+    width: 100%;
+    height: 100%;
+}
+.form-contact
+{
+    width: 50%;
+    height: 100%;
+    text-align: center;
+}
+.form-contact h1
+{
+    text-transform: uppercase;
+    margin: 3rem auto;
+}
+.form-element
+{
+    position: relative;
+    width: 90%;
+    margin: 2rem auto;
+}
+.form-element input
+{
+       height: 5rem;
+       width: 100%;
+       padding: 0 4rem;
+       outline: none;
+       border: $border;
+       background-color: transparent;
+}
+.form-element input:focus
+{
+    color: #fff;
+}
+.form-element .fa
+{
+    position: absolute;
+    line-height: 5rem;
+    left: 1rem;
+    font-size: 2rem;
+}
+.btn-contact
+{
+    @include buttonn();
+    margin-top: 1rem;
+    text-transform: capitalize;
+}
+.btn-contact:hover 
+{
+    letter-spacing: .2rem;
+}
+#our-blog
+{
+    @include base-section()
+}
+.blog-container
+{
+    @include grid();
+    margin: 4rem auto;
+    height: 50rem;
+    
+}
+.blog-element
+{
+    border:$border;
+    border-radius: 10px;
+    @include textform()
+}
+.box-image
+{
+    width: 100%;
+    overflow: hidden;
+}
+.box-image:hover img
+{
+    transform: scale(1.3);
+}
+.box-image img
+{
+    width: 100%;
+}
+.blog-element h2,.blog-element .author,.blog-element .title
+{
+    padding: 10px;
+}
+.blog-element .author
+{
+    color: $main-color;
+}
+.btn-read
+{  
+    @include buttonn();
+    margin: 0;
+    margin-top: 2rem;
+    text-transform: capitalize;
+    margin-left: 10px;
+    
+}
+.btn-read:hover
+{
+    letter-spacing: .2rem;
+}
+#footer
+{
+    @include base-section()
+}
+.socical
+{
+    color: white;
+}
+.socical__element
+{
+    width: 5rem;
+    height: 5rem;
+    display: inline-block;
+    background-color: $main-color;
+    margin: 0 1rem;
+    border-radius: 50%;
+    position: relative;
+    
+}
+.socical__element:hover a
+{ 
+  transform: rotate(-180deg);
+}
+.socical__element a
+{
+    line-height: 5rem;
+    color: white;
+    transform-origin:center;
+    font-size: 3rem;
+  
+}
+.nav-footer
+{
+    width: 1020px;
+    margin: auto;
+    padding:4rem 0;
+}
+.nav-footer li:hover .navf__element
+{
+    background: $main-color;
+}
+.nav-footer li
+{
+    display: inline-block;
+    padding:0 2.4rem
+}
+.nav-footer li .navf__element
+{
+    @include textform();
+    padding: 1.5rem;
+    border: $border;
+}
+.copy-right
+{
+    @include textform();
+    text-align: center;
+    margin: 3rem 0;
+}
+.copy-right span
+{
+    color: $main-color;
 }
