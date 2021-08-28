@@ -281,7 +281,7 @@ $desktop-width: 1024px;
         grid-auto-flow: column;
         height: 40rem;
         width: 930px;
-       
+
 
     } 
 }
@@ -291,8 +291,15 @@ $desktop-width: 1024px;
     {   
         
         height: 40rem;
-       
+       scroll-snap-align: start;
 
+    } 
+}
+body
+{
+    @include mobile()
+    {   
+       overflow: hidden;
     } 
 }
 .product-item .icon
