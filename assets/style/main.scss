@@ -491,6 +491,7 @@ letter-spacing: .2rem;
 {
     border:$border;
     border-radius: 10px;
+    scroll-snap-align: start;
 }
 .review-item img
 {
@@ -596,7 +597,8 @@ letter-spacing: .2rem;
 {
     border:$border;
     border-radius: 10px;
-    @include textform()
+    @include textform();
+    scroll-snap-align: start;
 }
 .box-image
 {

@@ -593,6 +593,7 @@ body {
 .review-item {
   border: 0.1rem solid rgba(255, 255, 255, 0.3);
   border-radius: 10px;
+  scroll-snap-align: start;
 }
 
 .review-item img {
@@ -732,6 +733,7 @@ body {
   color: white;
   font-size: 1.6rem;
   text-align: left;
+  scroll-snap-align: start;
 }
 
 .box-image {
