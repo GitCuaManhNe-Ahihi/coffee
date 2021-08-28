@@ -27,6 +27,7 @@
     left: 0;
     scroll-snap-align: start;
     max-width: 100%;
+    text-align: center;
 }
 @mixin grid {
     display: grid;
@@ -196,13 +197,14 @@ body{
     max-height: 12rem;
     margin: 2rem .5rem;
     width: 100%;
+    
 }
 .image-cart-item
 {
     height: 10rem;
     margin: auto;
     background: url($cart-item1);
-    background-size: cover;
+    background-size: 100% 100%;
     background-position: center;
     width: 12rem;
     margin-right: 3rem;
@@ -264,6 +266,7 @@ letter-spacing: .2rem;
  background: url(../images/home-img.jpeg);
  background-size:100% 100%;
  @include base-section();
+ text-align: left;
 
 }
 .text-home
@@ -631,7 +634,8 @@ letter-spacing: .2rem;
 }
 #footer
 {
-    @include base-section()
+    @include base-section();
+    text-align:center;
 }
 .socical
 {

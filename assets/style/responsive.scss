@@ -34,7 +34,7 @@ $desktop-width: 1024px;
     {
         width: 100vw;
         flex-direction: column;
-        height: 20rem;
+        height: unset;
     }
 }
 #header .nav
@@ -52,7 +52,12 @@ $desktop-width: 1024px;
         line-height: 5rem;
         padding:  0;
     }
-   
+    @include mobile()
+    {
+        
+        line-height: 4rem;
+        padding:  0;
+    }
 }
 #header .nav li 
 {
@@ -70,12 +75,21 @@ $desktop-width: 1024px;
         );
         width: 60vw;
     }
+    
+    @include mobile()
+    {
+        top: 5rem;
+        left: 50%;
+        transform: translateX(-50%
+        );
+        width: 100vw;
+    }
 }
 .search-btn:hover .form-search
 {
     @include tablet
     {
-        width: 60vw;
+        width: 100vw;
     }
 }
 .cart
@@ -84,14 +98,64 @@ $desktop-width: 1024px;
     {   top:18.6rem;
         height: 80vh;
         width: 40rem;
-        transform: translateX(-rem);
+       
     }
+    @include mobile()
+    {   top:14.6rem;
+        height: calc(100vh - 14.6rem);
+        width: 100vw;
+    
+    }
+}
+.cart-item
+{
+    @include mobile()
+    {   
+     
+        min-height: 4rem;
+        max-height: 5rem;
+        margin: 2rem 0;
+
+    }
+}
+.cart-item .title h3
+{
+    @include mobile()
+    {   
+     font-size: 2rem;
+    }
+}
+.cart-item .title p
+{
+    font-size: 1.6rem;
+}
+
+.image-cart-item
+{  @include mobile(){
+    height: 6rem;
+    width: 6rem;
+    margin-right: 2rem;
+  }
+}
+.cart >.btn-pay
+{
+    @include mobile(){
+
+    font-size: 1.5rem;
+    }
+    
 }
 #banner
 {
     @include tablet
-    {height:calc(100vh - 18.6rem);
+    {   height:calc(100vh - 18.6rem);
         margin-top: 18.6rem;
+        width: 100vw;
+    }
+    @include mobile(){
+
+        height:calc(100vh - 14.6rem);
+        margin-top: 14.6rem;
         width: 100vw;
     }
 }
@@ -101,12 +165,33 @@ $desktop-width: 1024px;
     {
         max-width: 40rem;
     }
+    @include mobile(){
+        margin-left: 4rem;
+        max-width: 50vw;
+        margin-top: 1rem;
+    }
+    
 }
 .text-home h1
 {
     @include tablet
     {
         font-size: 7rem;
+    }
+    @include mobile(){
+        font-size: 4rem;
+    }
+}
+.text-home p
+{
+    @include mobile(){
+        font-size: 1.7rem;
+    }
+}
+.heading h1
+{
+    @include mobile(){
+        font-size: 3rem;
     }
 }
 .about-content
@@ -116,14 +201,41 @@ $desktop-width: 1024px;
        width: 100vw;
        height: 30rem;
     }
+    @include mobile(){
+        height:unset;
+        margin-top: 5rem;
+        width: 98vw;
+        flex-direction: column;
+    }
+}
+.map,
+.form-contact,
+.about-content >.box-img,
+.about-content  .box-text
+{
+    @include mobile(){
+       width: 100%;
+       height: 30rem;
+       padding: 0 .3rem;
+    }
 }
 .about-content  .box-text h2
-{
-    @include tablet
+{    @include tablet
     {
       font-size: 2.5rem;
     }
+    @include mobile(){
+        font-size: 2rem;
+     }
 }
+.about-content  .box-text p
+{
+    @include mobile(){
+        font-size: 1.5rem;
+     }
+}
+
+
 .menu-content
 {
     @include tablet
@@ -131,15 +243,90 @@ $desktop-width: 1024px;
     }
    
 }
+.menu-around,
 .blog-container-about,
 .review-container-about,
 .product-container-about
 {
     @include tablet
-    { width: 98vw;
+    {   width: 98vw;
         overflow-x: auto;
         margin: auto;
     } 
+    @include mobile()
+    {   width: 98vw;
+        overflow-x: auto;
+        margin: auto;
+        scroll-snap-type: x mandatory;
+    } 
+}
+
+.menu-content
+{
+    @include mobile()
+    {   
+        gap: .2rem;
+        grid-auto-flow: column;
+        height: 30rem;
+        width: 1860px;
+       
+
+    } 
+}
+.product-container
+{
+    @include mobile()
+    {   
+        gap: .2rem;
+        grid-auto-flow: column;
+        height: 40rem;
+        width: 930px;
+       
+
+    } 
+}
+.product-item
+{
+    @include mobile()
+    {   
+        
+        height: 40rem;
+       
+
+    } 
+}
+.product-item .icon
+{
+    @include mobile()
+    {   
+        
+        margin: 1rem;
+        margin-bottom: .5rem;
+    } 
+}
+.product-item .icon .fa
+{@include mobile(){
+    width: 4rem;
+    padding: 3px;
+    font-size: 2.5rem;}
+}
+.stars,
+.product-item img
+{@include mobile()
+    {margin: .5rem;
+    }
+}
+.stars .fa
+{
+    @include mobile()
+    {
+        font-size: 1.5rem;
+    }
+}
+
+.menu-item
+{
+    scroll-snap-align: start;
 }
 .contact-container
 {
@@ -148,7 +335,14 @@ $desktop-width: 1024px;
        width: 100vw;
        height: 30rem;
     }
+    @include mobile(){
+        height:unset;
+        margin-top: 5rem;
+        width: 98vw;
+        flex-direction: column;
+    }
 }
+
 .form-element,
 .form-contact h1
 {
@@ -156,12 +350,53 @@ $desktop-width: 1024px;
     {
         margin: 1rem auto;
     }
+    @include mobile()
+    {
+        margin: 1rem auto;
+    }
 }
+
 .nav-footer
 {  @include tablet{
-    width: 100vw;}
+    width: 100vw;
+    }
+    @include mobile(){
+        width: 100vw;
+        display: flex;
+        flex-wrap: wrap;
+        height: 10rem;
+        justify-content: center;
+        align-items: center;
+        padding: 0;
+        margin: 2rem 0;
+    }
 }
 .nav-footer li
 {  @include tablet{
     padding:0 1.4rem
-}}
+}
+ @include mobile(){
+    padding:0 .4rem;
+    margin-top: 2rem;
+}
+}
+.nav-footer li .navf__element
+{
+    @include mobile(){
+        padding:.4rem;
+        font-size: 1.2rem;
+    }
+}
+.socical__element
+{
+    @include mobile(){
+        width: 3rem;
+        height: 3rem;
+    }
+}
+.socical__element a
+{    @include mobile(){
+    line-height: 3rem;
+    font-size: 1.6rem;}
+  
+}
