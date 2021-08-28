@@ -26,6 +26,7 @@
     top: 0;
     left: 0;
     scroll-snap-align: start;
+    max-width: 100%;
 }
 @mixin grid {
     display: grid;
@@ -38,11 +39,10 @@ body{
 }
 #header
 {
-    color: $textcolor;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-evenly;
     align-items: center;
-    padding: 1rem 10rem;
+    padding: 1rem 10%;
     height: 100px;
     border-bottom: $border;
     background:$bg;
@@ -50,8 +50,10 @@ body{
     top: 0;
     left: 0;
     right: 0;
+    width: 100%;
     z-index: 1000;
-    margin: auto;
+ 
+    
 }
 #header .logo img
 {
@@ -93,6 +95,7 @@ body{
     position: relative;
     line-height: 10rem;
     cursor: pointer;
+    color: white;
 
 }
 .search-btn> i,.cart-shopping> i
@@ -256,7 +259,6 @@ letter-spacing: .2rem;
 #banner
 {
  color:#fff;
- max-height:calc(100vh - 10rem);
  height:calc(100vh - 10rem);
  margin-top: 10rem;
  background: url(../images/home-img.jpeg);

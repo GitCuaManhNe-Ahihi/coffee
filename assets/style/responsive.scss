@@ -1,0 +1,167 @@
+@import './main.scss';
+//responsive
+$mobile-width: 480px; 
+$tablet-width: 768px; 
+$desktop-width: 1024px;  
+
+@mixin mobile { @media (max-width: #{$mobile-width - 1px}) {     
+  @content;   
+ } 
+}  
+
+@mixin tablet { @media (min-width: #{$tablet-width}) and (max-width: #{$desktop-width - 1px}) {       
+   @content;   
+ } 
+}  
+
+@mixin desktop {   @media (min-width: #{$desktop-width}) {     
+  @content;  
+ } 
+}
+
+
+#header
+{
+    @include tablet
+    {
+        padding:0;
+        flex-direction: column;
+        height: unset;
+        width: 100vw;
+    }
+    
+    @include mobile()
+    {
+        width: 100vw;
+        flex-direction: column;
+        height: 20rem;
+    }
+}
+#header .nav
+{
+    @include mobile()
+    {
+        display: none;
+    }
+   
+}
+.search-btn,.cart-shopping,
+#header .nav li .nav__element{
+    @include tablet
+    {
+        line-height: 5rem;
+        padding:  0;
+    }
+   
+}
+#header .nav li 
+{
+    @include tablet
+    {
+        padding: 0rem 1.5rem;
+    }
+}
+.form-search
+{
+    @include tablet
+    {   top: 5rem;
+        left: 50%;
+        transform: translateX(-50%
+        );
+        width: 60vw;
+    }
+}
+.search-btn:hover .form-search
+{
+    @include tablet
+    {
+        width: 60vw;
+    }
+}
+.cart
+{
+    @include tablet
+    {   top:18.6rem;
+        height: 80vh;
+        width: 40rem;
+        transform: translateX(-rem);
+    }
+}
+#banner
+{
+    @include tablet
+    {height:calc(100vh - 18.6rem);
+        margin-top: 18.6rem;
+        width: 100vw;
+    }
+}
+.text-home
+{
+    @include tablet
+    {
+        max-width: 40rem;
+    }
+}
+.text-home h1
+{
+    @include tablet
+    {
+        font-size: 7rem;
+    }
+}
+.about-content
+{
+    @include tablet
+    {
+       width: 100vw;
+       height: 30rem;
+    }
+}
+.about-content  .box-text h2
+{
+    @include tablet
+    {
+      font-size: 2.5rem;
+    }
+}
+.menu-content
+{
+    @include tablet
+    { width: 100vw;
+    }
+   
+}
+.blog-container-about,
+.review-container-about,
+.product-container-about
+{
+    @include tablet
+    { width: 98vw;
+        overflow-x: auto;
+        margin: auto;
+    } 
+}
+.contact-container
+{
+    @include tablet
+    {
+       width: 100vw;
+       height: 30rem;
+    }
+}
+.form-element,
+.form-contact h1
+{
+    @include tablet
+    {
+        margin: 1rem auto;
+    }
+}
+.nav-footer
+{  @include tablet{
+    width: 100vw;}
+}
+.nav-footer li
+{  @include tablet{
+    padding:0 1.4rem
+}}
